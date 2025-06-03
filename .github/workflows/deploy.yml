@@ -5,6 +5,8 @@ on: push
 jobs:
   first_job:
     runs-on: ubuntu-latest
+    env:
+      NAME: Miguel
     steps:
       - name: Hola Mundo
         run: echo "Hola Mundo"
@@ -15,4 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hola Mundo
+        if: false
         run: echo "Hola Mundo Segundo Job"
