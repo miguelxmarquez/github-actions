@@ -7,8 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hola Mundo
-        run: cat hola.php
+        run: echo "Hola Mundo"
   second_job:
+    if: false
     needs: 
       - first_job
     runs-on: ubuntu-latest
