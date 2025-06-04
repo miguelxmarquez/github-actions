@@ -32,3 +32,18 @@ jobs:
       - name: Hola Mundo
         if: true
         run: echo "$SALIDA"
+
+  third_job:
+    name: Third Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generar Archivo
+        run: |
+          echo "Archivo prueba, hora mundo from Github Actions" >> test.log
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with: 
+          name: archivo-test
+          path: test.log
+
+        
