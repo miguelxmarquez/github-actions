@@ -34,7 +34,7 @@ jobs:
         run: echo "$SALIDA"
 
   third_job:
-    name: Third Job
+    name: Subir Artefacto
     runs-on: ubuntu-latest
     steps:
       - name: Generar Archivo
@@ -45,5 +45,15 @@ jobs:
         with: 
           name: archivo-test
           path: test.log
+  fourth_job:
+    name: Descargar artefacto
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar artefacto
+        uses: actions/download-artifact@v4
+        with: 
+          name: archivo-test
+      - name: Cat File
+        run: cat test.log
 
         
