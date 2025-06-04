@@ -4,6 +4,7 @@ on: push
 
 jobs:
   first_job:
+    name: First Github Action Job
     runs-on: ubuntu-latest
     env:
       NAME: Miguel
