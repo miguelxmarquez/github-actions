@@ -1,0 +1,15 @@
+name: Deploy to server with Strategy
+
+on: push
+
+jobs:
+  first_job:
+    name: First Github Action Job
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        message: ["Hola", "Miguel", "Github Action Bootcamp"]
+    steps:
+      - name: Print Message
+        run: echo "${{ matrix.message }}"
